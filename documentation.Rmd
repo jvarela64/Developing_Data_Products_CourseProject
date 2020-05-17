@@ -1,0 +1,34 @@
+---
+title: "MTCars Modeling Shiny App Documentation"
+author: "Joel Varela Donado"
+date: "5/16/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Contents
+
+One of the default data sets in R is the $mtcars$ dataset. This shiny web app will perform Linear Regression on its variables and display results dynamically. 
+
+Web application has 2 parts
+
+* Left Sidebar for Input
+* Right Main panel for output
+
+### Left side bar input Panels
+
+You need to pick an Outcome variable and the Predictors. Please use the radio buttons and check boxes.
+You can pick several Predictors.
+Picking the same Outcome as Predictor has no effect
+Changing your picks will update the results dynamically or reactively 
+
+### Right side Output Panels
+
+You will see the results of your picks on the right hand side:
+
+* Plot of fitted values vs Residuals
+* Summary of the linear model with coefficients, residuals, statistics, and of course, the formula used.
+
