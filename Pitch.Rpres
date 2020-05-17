@@ -1,0 +1,56 @@
+Pitch
+========================================================
+author: Joel Varela Donado
+date: May 16, 2020
+autosize: true
+
+Contents of Shiny Web App
+========================================================
+
+
+One of the default data sets in R is the $mtcars$ dataset. This shiny web app will perform Linear Regression on its variables and display results dynamically. 
+
+Web application has 2 parts
+
+* Left Sidebar for Input
+* Right Main panel for output
+
+Left side bar input Panels
+========================================================
+The left bar has an Outcome variable and the Predictors. Using the  radio buttons and check boxes you'll be able to pick to start a linear model.
+- You can pick several Predictors.
+- Picking the same Outcome as Predictor has no effect.
+- Changing your picks will update the results dynamically
+$mtcars$ contains the following variables:
+```{r}
+names(mtcars)
+```
+
+Right side main Output Panel
+========================================================
+You will see the results of your picks on the right hand side:
+
+* Plot of fitted values vs Residuals
+* Summary of the linear model with coefficients, residuals, statistics, and of course, the formula used.
+
+
+Right side main Output Panel
+========================================================
+
+Here's an example, if you pick MPG as outcome and CYL as predictor then the plot will be:
+```{r, cache=TRUE }
+model=lm(mpg ~ cyl, data=mtcars)
+plot(model$residuals ~ model$fitted.values, xlab = "Fitted Values - cyl", ylab = "Residuals", main = "Plot of Calculations")
+lines(c(0,max(model$fitted.values)), c(0,0))
+```
+
+Right side main Output Panel
+========================================================
+
+And for the same example the printed result will be:
+
+```{r, }
+
+summary(model)
+```
+
